@@ -867,66 +867,6 @@ body {
   letter-spacing: 2px;
 }
 
-/* ============ SCROLL ANIMATIONS ============ */
-.fade-in {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-.fade-in.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* ============ RESPONSIVE ============ */
-@media (max-width: 768px) {
-  .section { padding: 60px 0; }
-
-  .moment-card,
-  .moment-card.reverse {
-    flex-direction: column;
-  }
-
-  .moment-card.glass { padding: 20px; }
-
-  .moment-img-wrap {
-    flex: none;
-    width: 100%;
-  }
-
-  .moment-img-wrap img { height: 200px; }
-
-  .two-col { grid-template-columns: 1fr; }
-
-  .photo-grid { grid-template-columns: repeat(2, 1fr); }
-
-  .match-cards { grid-template-columns: repeat(2, 1fr); }
-
-  .moon-gallery { grid-template-columns: repeat(3, 1fr); gap: 12px; }
-
-  .valentine-moment { grid-template-columns: 1fr; }
-
-  .masonry { columns: 2; }
-
-  .pinch-items { flex-direction: column; align-items: center; }
-
-  .pinch-item { flex: none; width: 100%; max-width: 280px; }
-
-  .love-letter { padding: 32px 24px; }
-  .love-letter.big { padding: 40px 24px; }
-
-  .nickname-cards { flex-direction: column; align-items: center; }
-}
-
-@media (max-width: 480px) {
-  .photo-grid { grid-template-columns: 1fr 1fr; }
-  .match-cards { grid-template-columns: 1fr 1fr; }
-  .song-cards { flex-direction: column; align-items: center; }
-  .song-card { flex: none; width: 100%; max-width: 250px; }
-  .masonry { columns: 1; }
-}
-
 /* ============ PLAY OVERLAY ============ */
 .play-overlay {
   position: fixed;
@@ -1040,6 +980,66 @@ body {
   font-size: 0.85rem;
   color: white;
   white-space: nowrap;
+}
+
+/* ============ SCROLL ANIMATIONS ============ */
+.fade-in {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 768px) {
+  .section { padding: 60px 0; }
+
+  .moment-card,
+  .moment-card.reverse {
+    flex-direction: column;
+  }
+
+  .moment-card.glass { padding: 20px; }
+
+  .moment-img-wrap {
+    flex: none;
+    width: 100%;
+  }
+
+  .moment-img-wrap img { height: 200px; }
+
+  .two-col { grid-template-columns: 1fr; }
+
+  .photo-grid { grid-template-columns: repeat(2, 1fr); }
+
+  .match-cards { grid-template-columns: repeat(2, 1fr); }
+
+  .moon-gallery { grid-template-columns: repeat(3, 1fr); gap: 12px; }
+
+  .valentine-moment { grid-template-columns: 1fr; }
+
+  .masonry { columns: 2; }
+
+  .pinch-items { flex-direction: column; align-items: center; }
+
+  .pinch-item { flex: none; width: 100%; max-width: 280px; }
+
+  .love-letter { padding: 32px 24px; }
+  .love-letter.big { padding: 40px 24px; }
+
+  .nickname-cards { flex-direction: column; align-items: center; }
+}
+
+@media (max-width: 480px) {
+  .photo-grid { grid-template-columns: 1fr 1fr; }
+  .match-cards { grid-template-columns: 1fr 1fr; }
+  .song-cards { flex-direction: column; align-items: center; }
+  .song-card { flex: none; width: 100%; max-width: 250px; }
+  .masonry { columns: 1; }
 }
 
 @media (max-width: 480px) {
