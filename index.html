@@ -11,6 +11,26 @@
 </head>
 <body>
 
+  <!-- Background Music -->
+  <audio id="bgMusic" loop preload="auto">
+    <source src="music/aaj-se-teri.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- Music Toggle Button -->
+  <button class="music-toggle" id="musicToggle" aria-label="Toggle music">
+    <span class="music-icon playing" id="musicIcon">&#9835;</span>
+    <span class="music-label" id="musicLabel">Aaj Se Teri</span>
+  </button>
+
+  <!-- Play overlay for first interaction -->
+  <div class="play-overlay" id="playOverlay">
+    <div class="play-overlay-content">
+      <div class="play-icon-wrap">&#9835;</div>
+      <p class="play-text">Tap anywhere to begin</p>
+      <p class="play-song-name">&#9829; Aaj Se Teri &#9829;</p>
+    </div>
+  </div>
+
   <!-- Floating hearts background -->
   <div class="hearts-bg" id="heartsBg"></div>
 

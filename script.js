@@ -150,6 +150,62 @@
   });
 })();
 
+// --- Background Music with Play Overlay ---
+(function initMusic() {
+  const audio = document.getElementById('bgMusic');
+  const overlay = document.getElementById('playOverlay');
+  const toggle = document.getElementById('musicToggle');
+  const icon = document.getElementById('musicIcon');
+  const label = document.getElementById('musicLabel');
+  let isPlaying = false;
+
+  function startMusic() {
+    audio.volume = 0.4;
+    audio.play().then(() => {
+      isPlaying = true;
+      overlay.classList.add('hidden');
+      toggle.classList.add('visible');
+      icon.className = 'music-icon playing';
+      label.textContent = 'Aaj Se Teri';
+    }).catch(() => {
+      // Autoplay blocked, keep overlay visible
+    });
+  }
+
+  // Start on first tap/click anywhere on overlay
+  overlay.addEventListener('click', startMusic);
+  overlay.addEventListener('touchstart', startMusic, { once: true });
+
+  // Toggle button
+  toggle.addEventListener('click', () => {
+    if (isPlaying) {
+      audio.pause();
+      isPlaying = false;
+      icon.className = 'music-icon paused';
+      label.textContent = 'Play';
+    } else {
+      audio.play();
+      isPlaying = true;
+      icon.className = 'music-icon playing';
+      label.textContent = 'Aaj Se Teri';
+    }
+  });
+
+  // Try autoplay immediately (works if user has interacted with site before)
+  audio.volume = 0.4;
+  const autoplayPromise = audio.play();
+  if (autoplayPromise !== undefined) {
+    autoplayPromise.then(() => {
+      isPlaying = true;
+      overlay.classList.add('hidden');
+      toggle.classList.add('visible');
+      icon.className = 'music-icon playing';
+    }).catch(() => {
+      // Autoplay blocked — overlay stays visible for user tap
+    });
+  }
+})();
+
 // --- Console love note ---
 console.log('%c\u2764 Surya & Sanjana \u2764', 'font-size: 24px; color: #e8a0bf; font-family: cursive;');
 console.log('%cFrom a Christmas message to forever.', 'font-size: 14px; color: #d4a574;');
